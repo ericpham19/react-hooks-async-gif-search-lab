@@ -9,6 +9,7 @@ function GifListContainer() {
   useEffect(() => {
     clearTimeout(timer.current);
     timer.current = setTimeout(() => {
+        /// added a timeout function so the fetch doesnt trigger with every onchange automatically
       fetch(
         `https://api.giphy.com/v1/gifs/search?q=${query}&api_key=L5UiYwmqhJmCqe7ARupD52qXxWVn6Chq&rating=g&limit=3`
       )
@@ -29,3 +30,4 @@ function GifListContainer() {
 }
 
 export default GifListContainer;
+
